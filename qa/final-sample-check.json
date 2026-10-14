@@ -1,0 +1,27 @@
+{
+  "structural_status": "passed",
+  "semantic_status": "recorded_reviews_current",
+  "overall_status": "ready_for_text_delivery",
+  "audio_status": "not_measured",
+  "video_status": "not_generated",
+  "source_reading": "reader_declaration_not_independent_proof",
+  "errors": [],
+  "review_required": [],
+  "counts": {
+    "source_blocks": 15,
+    "read_blocks_declared": 15,
+    "episodes": [
+      1
+    ],
+    "scenes": 3,
+    "segments": 6,
+    "shot_fragments": 12,
+    "planned_continuous_shots": 11,
+    "locked_voices": 8,
+    "narration_voices": 1,
+    "audio_fragments": 9,
+    "planned_total_seconds": "62",
+    "max_segment_seconds": "13",
+    "max_shot_fragment_seconds": "9"
+  }
+}

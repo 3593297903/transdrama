@@ -1,0 +1,10 @@
+{
+  "structural_status": "passed",
+  "semantic_status": "recorded_reviews_current",
+  "overall_status": "ready_for_text_delivery",
+  "audio_status": "not_measured",
+  "video_status": "not_generated",
+  "source_reading": "reader_declaration_not_independent_proof",
+  "errors": [],
+  "review_required": []
+}

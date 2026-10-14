@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "import-checkpoint",
+    "title": "ImportCheck",
+    "revision": 1,
+    "locale": "en-GB",
+    "region": "Fictional-England",
+    "era": "1998",
+    "scope_summary": "等待逐集逐场阅读定位",
+    "episodes": [
+      1
+    ],
+    "expected_scene_ids": [],
+    "episode_duration": {},
+    "status": "draft",
+    "audio_status": "not_measured",
+    "video_status": "not_generated"
+  },
+  "sources": [
+    {
+      "id": "SRC1",
+      "name": "source.txt",
+      "sha256": "117d2e6c2326579a8d122f189a61dd69409ce4b6b2423e11eec2cdbeb6178175",
+      "extraction_status": "complete",
+      "reading_status": "unread",
+      "limitations": [],
+      "blocks": [
+        {
+          "id": "SRC1:B1",
+          "locator": "line:1",
+          "text": "原创测试材料《旧泵房》，第1集，三个连续场次；文字规划62秒，不是视频实测。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B2",
+          "locator": "line:2",
+          "text": "场1：旧泵房检修门外。门前可站两人，门后木闩卡住；一把钥匙已在青禾左手，右手伤未愈。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B3",
+          "locator": "line:3",
+          "text": "旁白：小院停水三天了。青禾拿着素娘交给她的钥匙，走到检修门前。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B4",
+          "locator": "line:4",
+          "text": "青禾：娘，你让我来照看这里，我先看看门吧。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B5",
+          "locator": "line:5",
+          "text": "素娘（画外对白）：别用右手。你手上的伤还没好。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B6",
+          "locator": "line:6",
+          "text": "动作：青禾左手把唯一的钥匙插入锁孔转动，门松开一点，但被门后木闩卡住；她停止用力，钥匙留在锁内。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B7",
+          "locator": "line:7",
+          "text": "场2：同一门外，素娘从墙边取下登记簿，打开后发现缺一页。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B8",
+          "locator": "line:8",
+          "text": "素娘：是谁最后来过这里？",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B9",
+          "locator": "line:9",
+          "text": "青禾：可能是老周。我还得查一下。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B10",
+          "locator": "line:10",
+          "text": "素娘：这儿少了一页。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B11",
+          "locator": "line:11",
+          "text": "动作：素娘把登记簿摊开在门边木架上，指向缺页处；青禾左手取回钥匙放进口袋，不用右手。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B12",
+          "locator": "line:12",
+          "text": "场3：木架边，母女保持原位，没有新证据。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B13",
+          "locator": "line:13",
+          "text": "青禾：明天才能查清楚。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B14",
+          "locator": "line:14",
+          "text": "素娘：那就明天再来。簿子先放在这儿。",
+          "read": false,
+          "kind": "other"
+        },
+        {
+          "id": "SRC1:B15",
+          "locator": "line:15",
+          "text": "动作：素娘松开登记簿，簿子仍摊在木架上；二人离开门前，门仍被木闩卡住。",
+          "read": false,
+          "kind": "other"
+        }
+      ]
+    }
+  ],
+  "entities": [],
+  "scenes": [],
+  "events": [],
+  "voices": [],
+  "segments": [],
+  "coverage": [],
+  "reviews": [],
+  "issues": []
+}

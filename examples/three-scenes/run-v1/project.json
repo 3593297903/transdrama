@@ -1,0 +1,1369 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "old-pump-house",
+    "title": "旧泵房｜原创三场英语改编小样",
+    "revision": 2,
+    "locale": "en-GB",
+    "region": "虚构英格兰北部乡村维修小院",
+    "era": "1998年",
+    "scope_summary": "完整第1集，场1—3；保留查门、查登记簿、明日再查的主线；母女改为主管与受雇维修助理。",
+    "episodes": [
+      1
+    ],
+    "expected_scene_ids": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "episode_duration": {
+      "1": {
+        "kind": "planned",
+        "seconds": 62,
+        "basis": "原创源稿文字规划62秒；非视频/音频测量"
+      }
+    },
+    "status": "locked",
+    "audio_status": "not_measured",
+    "video_status": "not_generated"
+  },
+  "sources": [
+    {
+      "id": "SRC1",
+      "name": "source.txt",
+      "sha256": "117d2e6c2326579a8d122f189a61dd69409ce4b6b2423e11eec2cdbeb6178175",
+      "extraction_status": "complete",
+      "reading_status": "complete",
+      "limitations": [],
+      "blocks": [
+        {
+          "id": "SRC1:B1",
+          "locator": "line:1",
+          "text": "原创测试材料《旧泵房》，第1集，三个连续场次；文字规划62秒，不是视频实测。",
+          "read": true,
+          "kind": "heading"
+        },
+        {
+          "id": "SRC1:B2",
+          "locator": "line:2",
+          "text": "场1：旧泵房检修门外。门前可站两人，门后木闩卡住；一把钥匙已在青禾左手，右手伤未愈。",
+          "read": true,
+          "kind": "action"
+        },
+        {
+          "id": "SRC1:B3",
+          "locator": "line:3",
+          "text": "旁白：小院停水三天了。青禾拿着素娘交给她的钥匙，走到检修门前。",
+          "read": true,
+          "kind": "narration"
+        },
+        {
+          "id": "SRC1:B4",
+          "locator": "line:4",
+          "text": "青禾：娘，你让我来照看这里，我先看看门吧。",
+          "read": true,
+          "kind": "dialogue"
+        },
+        {
+          "id": "SRC1:B5",
+          "locator": "line:5",
+          "text": "素娘（画外对白）：别用右手。你手上的伤还没好。",
+          "read": true,
+          "kind": "offscreen"
+        },
+        {
+          "id": "SRC1:B6",
+          "locator": "line:6",
+          "text": "动作：青禾左手把唯一的钥匙插入锁孔转动，门松开一点，但被门后木闩卡住；她停止用力，钥匙留在锁内。",
+          "read": true,
+          "kind": "action"
+        },
+        {
+          "id": "SRC1:B7",
+          "locator": "line:7",
+          "text": "场2：同一门外，素娘从墙边取下登记簿，打开后发现缺一页。",
+          "read": true,
+          "kind": "action"
+        },
+        {
+          "id": "SRC1:B8",
+          "locator": "line:8",
+          "text": "素娘：是谁最后来过这里？",
+          "read": true,
+          "kind": "dialogue"
+        },
+        {
+          "id": "SRC1:B9",
+          "locator": "line:9",
+          "text": "青禾：可能是老周。我还得查一下。",
+          "read": true,
+          "kind": "dialogue"
+        },
+        {
+          "id": "SRC1:B10",
+          "locator": "line:10",
+          "text": "素娘：这儿少了一页。",
+          "read": true,
+          "kind": "dialogue"
+        },
+        {
+          "id": "SRC1:B11",
+          "locator": "line:11",
+          "text": "动作：素娘把登记簿摊开在门边木架上，指向缺页处；青禾左手取回钥匙放进口袋，不用右手。",
+          "read": true,
+          "kind": "action"
+        },
+        {
+          "id": "SRC1:B12",
+          "locator": "line:12",
+          "text": "场3：木架边，母女保持原位，没有新证据。",
+          "read": true,
+          "kind": "action"
+        },
+        {
+          "id": "SRC1:B13",
+          "locator": "line:13",
+          "text": "青禾：明天才能查清楚。",
+          "read": true,
+          "kind": "dialogue"
+        },
+        {
+          "id": "SRC1:B14",
+          "locator": "line:14",
+          "text": "素娘：那就明天再来。簿子先放在这儿。",
+          "read": true,
+          "kind": "dialogue"
+        },
+        {
+          "id": "SRC1:B15",
+          "locator": "line:15",
+          "text": "动作：素娘松开登记簿，簿子仍摊在木架上；二人离开门前，门仍被木闩卡住。",
+          "read": true,
+          "kind": "action"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "C1",
+      "kind": "character",
+      "original_name": "青禾",
+      "name": "Nora Vale",
+      "fictional": true,
+      "version": 1,
+      "description": "28岁维修助理，宽额圆下颌、深棕短卷发、浓直眉，旧橄榄色棉工装外套配炭灰长裤，帆布工具袋；右手缠浅色绷带，全程只用左手操作。",
+      "relationship": "Mara新雇的维修助理，不是女儿；受托照看维修小院，有检查检修门的职责。",
+      "voice_profile": "对主管直说事实但不越权；不确定就明确说还要查，不装作已修好。",
+      "variants": [
+        {
+          "id": "workwear",
+          "description": "工装保持不变；绷带在右手。"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "kind": "character",
+      "original_name": "素娘",
+      "name": "Mara Ellis",
+      "fictional": true,
+      "version": 1,
+      "description": "46岁小院维修主管，长方脸、灰绿眼、栗色齐颈直发，暗红细格衬衫、深棕绒面背心、旧皮靴；衣袖挽至前臂。",
+      "relationship": "Nora的直接主管，有交付钥匙和安排次日核查的权限，不是母亲。",
+      "voice_profile": "务实简短；关心伤手是同事安全提醒，不说教。"
+    },
+    {
+      "id": "C3",
+      "kind": "character",
+      "original_name": "老周",
+      "name": "Owen Reed",
+      "fictional": true,
+      "version": 1,
+      "description": "未出场的前次维修人员；仅被提及，不生成面孔或追加行为。"
+    },
+    {
+      "id": "L1",
+      "kind": "location",
+      "original_name": "旧泵房",
+      "name": "旧泵棚",
+      "fictional": true,
+      "version": 1,
+      "description": "褪色砖墙、窄木门、门边木架、墙上登记簿挂钩；两人可并肩站立。门锁与门后木闩互相独立，木闩卡住门。无电子门禁。"
+    },
+    {
+      "id": "P1",
+      "kind": "prop",
+      "original_name": "钥匙",
+      "name": "黄铜钥匙",
+      "fictional": true,
+      "version": 1,
+      "description": "唯一一把旧黄铜机械钥匙，只能开锁，不能解除门后木闩。"
+    },
+    {
+      "id": "P2",
+      "kind": "prop",
+      "original_name": "登记簿",
+      "name": "维修登记簿",
+      "fictional": true,
+      "version": 1,
+      "description": "一本绿布封皮纸质维修登记簿，缺一页，书脊旁残留纸茬；缺页内容未知，不出现被撕的画面或新证据。"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S1",
+      "episode": 1,
+      "order": 1,
+      "title": "检查木门",
+      "goal": "确认门能否打开",
+      "change": "锁打开但门仍卡住",
+      "audience_information": "主管已把钥匙交给助理；右手伤未愈",
+      "preflight": "文字规划：留表演停顿；只用左手操作；钥匙与登记簿流转分别安排，不把全部动作强行同时做。未测音频。",
+      "entity_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "L1",
+        "P1",
+        "P2"
+      ],
+      "entry_state": {
+        "key": "Nora左手",
+        "door": "锁闭且木闩卡住",
+        "book": "墙上挂钩",
+        "right_hand": "受伤不用",
+        "last_visitor": "未知"
+      },
+      "exit_state": {
+        "key": "锁孔中",
+        "door": "锁已开但木闩卡住",
+        "book": "墙上挂钩",
+        "right_hand": "受伤不用",
+        "last_visitor": "未知"
+      },
+      "knowledge": {
+        "Nora": "门卡住原因可见；最后来访人未确认",
+        "Mara": "掌握交钥匙事实，听到Owen仅是猜测",
+        "观众": "仅知道已播放内容，不知道缺页内容"
+      }
+    },
+    {
+      "id": "S2",
+      "episode": 1,
+      "order": 2,
+      "title": "翻查登记簿",
+      "goal": "确认最后来过的人",
+      "change": "发现缺页，来访人仍只是猜测",
+      "audience_information": "看见缺页，但不知道内容与原因",
+      "preflight": "文字规划：留表演停顿；只用左手操作；钥匙与登记簿流转分别安排，不把全部动作强行同时做。未测音频。",
+      "entity_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "L1",
+        "P1",
+        "P2"
+      ],
+      "entry_state": {
+        "key": "锁孔中",
+        "door": "锁已开但木闩卡住",
+        "book": "墙上挂钩",
+        "right_hand": "受伤不用",
+        "last_visitor": "未知"
+      },
+      "exit_state": {
+        "key": "Nora口袋",
+        "door": "锁已开但木闩卡住",
+        "book": "木架上摊开缺一页",
+        "right_hand": "受伤不用",
+        "last_visitor": "可能Owen未确认"
+      },
+      "knowledge": {
+        "Nora": "门卡住原因可见；最后来访人未确认",
+        "Mara": "掌握交钥匙事实，听到Owen仅是猜测",
+        "观众": "仅知道已播放内容，不知道缺页内容"
+      },
+      "previous_scene_id": "S1"
+    },
+    {
+      "id": "S3",
+      "episode": 1,
+      "order": 3,
+      "title": "约定明日再查",
+      "goal": "确定核查时间",
+      "change": "明日继续核查，不承诺修复",
+      "audience_information": "知道只能明日查清，并非保证修好",
+      "preflight": "文字规划：留表演停顿；只用左手操作；钥匙与登记簿流转分别安排，不把全部动作强行同时做。未测音频。",
+      "entity_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "L1",
+        "P1",
+        "P2"
+      ],
+      "entry_state": {
+        "key": "Nora口袋",
+        "door": "锁已开但木闩卡住",
+        "book": "木架上摊开缺一页",
+        "right_hand": "受伤不用",
+        "last_visitor": "可能Owen未确认"
+      },
+      "exit_state": {
+        "key": "Nora口袋",
+        "door": "锁已开但木闩卡住",
+        "book": "木架上摊开缺一页",
+        "right_hand": "受伤不用",
+        "last_visitor": "可能Owen未确认"
+      },
+      "knowledge": {
+        "Nora": "门卡住原因可见；最后来访人未确认",
+        "Mara": "掌握交钥匙事实，听到Owen仅是猜测",
+        "观众": "仅知道已播放内容，不知道缺页内容"
+      },
+      "previous_scene_id": "S2"
+    }
+  ],
+  "events": [
+    {
+      "id": "E1",
+      "scene_id": "S1",
+      "description": "Nora左手开锁，发现门被木闩卡住后停手",
+      "phases": [
+        "持钥匙就位",
+        "插入转锁",
+        "门受阻停手"
+      ]
+    },
+    {
+      "id": "E2",
+      "scene_id": "S2",
+      "description": "Mara取簿打开指缺页；Nora左手取钥匙入袋",
+      "phases": [
+        "取下打开簿",
+        "指示缺页",
+        "收回钥匙"
+      ]
+    },
+    {
+      "id": "E3",
+      "scene_id": "S3",
+      "description": "约定明日再查后离开，登记簿留在架上",
+      "phases": [
+        "约定时间保持现状",
+        "松开簿并离开"
+      ]
+    }
+  ],
+  "voices": [
+    {
+      "id": "V1",
+      "scene_id": "S1",
+      "order": 1,
+      "channel": "narration",
+      "speaker_id": null,
+      "addressee_ids": [],
+      "text": "The water had been off for three days. Nora already had Mara's key.",
+      "meaning": "停水三天；钥匙已经由Mara交给Nora。",
+      "intent": "交代背景与已持钥匙",
+      "version": 1,
+      "source_ids": [
+        "SRC1:B3"
+      ]
+    },
+    {
+      "id": "V2",
+      "scene_id": "S1",
+      "order": 2,
+      "channel": "dialogue",
+      "speaker_id": "C1",
+      "addressee_ids": [
+        "C2"
+      ],
+      "text": "You put me in charge here, Mara. Let me check the door.",
+      "meaning": "Mara委托我照看这里，我先检查门。",
+      "intent": "说明受托职责并请求检查",
+      "version": 1,
+      "source_ids": [
+        "SRC1:B4"
+      ]
+    },
+    {
+      "id": "V3",
+      "scene_id": "S1",
+      "order": 3,
+      "channel": "offscreen",
+      "speaker_id": "C2",
+      "addressee_ids": [
+        "C1"
+      ],
+      "text": "Not with your right hand. It hasn't healed yet.",
+      "meaning": "不要用右手，伤还没好。",
+      "intent": "提醒同事保护伤手",
+      "version": 1,
+      "source_ids": [
+        "SRC1:B5"
+      ]
+    },
+    {
+      "id": "V4",
+      "scene_id": "S2",
+      "order": 4,
+      "channel": "dialogue",
+      "speaker_id": "C2",
+      "addressee_ids": [
+        "C1"
+      ],
+      "text": "Who was the last person here?",
+      "meaning": "谁最后来过这里？",
+      "intent": "询问最后来访者",
+      "version": 1,
+      "source_ids": [
+        "SRC1:B8"
+      ]
+    },
+    {
+      "id": "V5",
+      "scene_id": "S2",
+      "order": 5,
+      "channel": "dialogue",
+      "speaker_id": "C1",
+      "addressee_ids": [
+        "C2"
+      ],
+      "text": "It might've been Owen. I still need to check.",
+      "meaning": "可能是Owen，我还得查。",
+      "intent": "谨慎回答而非确认",
+      "version": 1,
+      "source_ids": [
+        "SRC1:B9"
+      ]
+    },
+    {
+      "id": "V6",
+      "scene_id": "S2",
+      "order": 6,
+      "channel": "dialogue",
+      "speaker_id": "C2",
+      "addressee_ids": [
+        "C1"
+      ],
+      "text": "There's a page missing here.",
+      "meaning": "这里少了一页。",
+      "intent": "指出可见缺页",
+      "version": 1,
+      "source_ids": [
+        "SRC1:B10"
+      ]
+    },
+    {
+      "id": "V7",
+      "scene_id": "S3",
+      "order": 7,
+      "channel": "dialogue",
+      "speaker_id": "C1",
+      "addressee_ids": [
+        "C2"
+      ],
+      "text": "I can't find out until tomorrow.",
+      "meaning": "明天才能查清。",
+      "intent": "限定最早核查时间，不保证修好",
+      "version": 2,
+      "source_ids": [
+        "SRC1:B13"
+      ]
+    },
+    {
+      "id": "V8",
+      "scene_id": "S3",
+      "order": 8,
+      "channel": "dialogue",
+      "speaker_id": "C2",
+      "addressee_ids": [
+        "C1"
+      ],
+      "text": "Then we'll come back tomorrow. Leave the book here for now.",
+      "meaning": "明天再来，簿子暂时放这儿。",
+      "intent": "安排下次核查与簿子留置",
+      "version": 1,
+      "source_ids": [
+        "SRC1:B14"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "id": "G1",
+      "scene_id": "S1",
+      "episode": 1,
+      "start": 0,
+      "duration": 12,
+      "asset_refs": [
+        {
+          "id": "C1",
+          "version": 1,
+          "state": "门左侧，右手伤不参与动作",
+          "variant_id": "workwear"
+        },
+        {
+          "id": "C2",
+          "version": 1,
+          "state": "门右侧"
+        },
+        {
+          "id": "L1",
+          "version": 1,
+          "state": "门内木闩仍卡住，出口和挂钩位置不变"
+        },
+        {
+          "id": "P1",
+          "version": 1,
+          "state": "Nora左手持有，尚未插锁"
+        },
+        {
+          "id": "P2",
+          "version": 1,
+          "state": "墙上挂钩"
+        }
+      ],
+      "setting": "两人在窄门外，木架在Mara身侧；不进入泵棚，不揭示门后其他空间。",
+      "sound": "小院风声、衣料轻响和同期动作声；不加音乐催情；声音轨严格按下列区间，只播放一次。",
+      "atmosphere": "写实柔和阴天散射光，旧砖与木纹有自然磨损，亮度跨段一致。",
+      "end_state": "两人到门前；Nora话音持续到下一段，钥匙仍在左手。",
+      "shots": [
+        {
+          "id": "SH1",
+          "start": 0,
+          "end": 5,
+          "framing": "双人中景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "门居中；左侧Nora左手钥匙可见，右手绷带不遮挡",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Nora持钥匙站定，Mara在右侧停下；不是来寻找钥匙。",
+          "event_refs": [
+            {
+              "event_id": "E1",
+              "phases": [
+                "持钥匙就位"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "SH2",
+          "start": 5,
+          "end": 12,
+          "framing": "Nora中近景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "Nora面朝右侧Mara，左手钥匙仍在腰前",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Nora抬眼与主管交流，保持持钥匙状态，没有开始开门。",
+          "event_refs": [],
+          "continuous_take_id": "TAKE1"
+        }
+      ],
+      "audio": [
+        {
+          "id": "G1-V1-0",
+          "voice_id": "V1",
+          "voice_version": 1,
+          "speaker_id": null,
+          "channel": "narration",
+          "start": 0,
+          "end": 5,
+          "char_start": 0,
+          "char_end": 67,
+          "text": "The water had been off for three days. Nora already had Mara's key."
+        },
+        {
+          "id": "G1-V2-0",
+          "voice_id": "V2",
+          "voice_version": 1,
+          "speaker_id": "C1",
+          "channel": "dialogue",
+          "start": 5,
+          "end": 12,
+          "char_start": 0,
+          "char_end": 33,
+          "text": "You put me in charge here, Mara. "
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "scene_id": "S1",
+      "episode": 1,
+      "start": 12,
+      "duration": 8,
+      "asset_refs": [
+        {
+          "id": "C1",
+          "version": 1,
+          "state": "门左侧，右手伤不参与动作",
+          "variant_id": "workwear"
+        },
+        {
+          "id": "C2",
+          "version": 1,
+          "state": "门右侧"
+        },
+        {
+          "id": "L1",
+          "version": 1,
+          "state": "门内木闩仍卡住，出口和挂钩位置不变"
+        },
+        {
+          "id": "P1",
+          "version": 1,
+          "state": "先在左手，随后入锁"
+        },
+        {
+          "id": "P2",
+          "version": 1,
+          "state": "墙上挂钩"
+        }
+      ],
+      "setting": "两人在窄门外，木架在Mara身侧；不进入泵棚，不揭示门后其他空间。",
+      "sound": "小院风声、衣料轻响和同期动作声；不加音乐催情；声音轨严格按下列区间，只播放一次。",
+      "atmosphere": "写实柔和阴天散射光，旧砖与木纹有自然磨损，亮度跨段一致。",
+      "end_state": "门锁已开但木闩卡住；钥匙留在锁孔；右手未用力。",
+      "shots": [
+        {
+          "id": "SH3",
+          "start": 0,
+          "end": 2,
+          "framing": "Nora中近景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "继承SH2相同构图及眼线",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "连续接续Nora发言，左手钥匙位置保持，不重复上一段动作。",
+          "event_refs": [],
+          "continuous_take_id": "TAKE1",
+          "continues_shot_id": "SH2"
+        },
+        {
+          "id": "SH4",
+          "start": 2,
+          "end": 6,
+          "framing": "左手与锁孔近景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "左手钥匙和锁孔居中；右手不入操作区域",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Nora左手将唯一钥匙插入锁孔并转开门锁；Mara仍在画外原位。",
+          "event_refs": [
+            {
+              "event_id": "E1",
+              "phases": [
+                "插入转锁"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "SH5",
+          "start": 6,
+          "end": 8,
+          "framing": "门缝细节近景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "门缝与卡住的木闩同框，位置清楚但不穿越门板",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "门只松开一点便碰到木闩；Nora停下，钥匙留在锁里。",
+          "event_refs": [
+            {
+              "event_id": "E1",
+              "phases": [
+                "门受阻停手"
+              ]
+            }
+          ]
+        }
+      ],
+      "audio": [
+        {
+          "id": "G2-V2-33",
+          "voice_id": "V2",
+          "voice_version": 1,
+          "speaker_id": "C1",
+          "channel": "dialogue",
+          "start": 0,
+          "end": 2,
+          "char_start": 33,
+          "char_end": 55,
+          "text": "Let me check the door."
+        },
+        {
+          "id": "G2-V3-0",
+          "voice_id": "V3",
+          "voice_version": 1,
+          "speaker_id": "C2",
+          "channel": "offscreen",
+          "start": 2,
+          "end": 7,
+          "char_start": 0,
+          "char_end": 47,
+          "text": "Not with your right hand. It hasn't healed yet."
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "scene_id": "S2",
+      "episode": 1,
+      "start": 20,
+      "duration": 9,
+      "asset_refs": [
+        {
+          "id": "C1",
+          "version": 1,
+          "state": "门左侧，右手伤不参与动作",
+          "variant_id": "workwear"
+        },
+        {
+          "id": "C2",
+          "version": 1,
+          "state": "门右侧"
+        },
+        {
+          "id": "L1",
+          "version": 1,
+          "state": "门内木闩仍卡住，出口和挂钩位置不变"
+        },
+        {
+          "id": "P1",
+          "version": 1,
+          "state": "锁孔中"
+        },
+        {
+          "id": "P2",
+          "version": 1,
+          "state": "由挂钩取下，随后打开"
+        }
+      ],
+      "setting": "两人在窄门外，木架在Mara身侧；不进入泵棚，不揭示门后其他空间。",
+      "sound": "小院风声、衣料轻响和同期动作声；不加音乐催情；声音轨严格按下列区间，只播放一次。",
+      "atmosphere": "写实柔和阴天散射光，旧砖与木纹有自然磨损，亮度跨段一致。",
+      "end_state": "Mara已打开簿子；Owen只是可能来访者，尚未确认。",
+      "shots": [
+        {
+          "id": "SH6",
+          "start": 0,
+          "end": 9,
+          "framing": "双人中景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "Mara及挂钩在右，Nora在左；木架在下方可见",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Mara取下登记簿，边与Nora交流边在木架上打开；不提前指认缺页。",
+          "event_refs": [
+            {
+              "event_id": "E2",
+              "phases": [
+                "取下打开簿"
+              ]
+            }
+          ]
+        }
+      ],
+      "audio": [
+        {
+          "id": "G3-V4-0",
+          "voice_id": "V4",
+          "voice_version": 1,
+          "speaker_id": "C2",
+          "channel": "dialogue",
+          "start": 0,
+          "end": 3,
+          "char_start": 0,
+          "char_end": 29,
+          "text": "Who was the last person here?"
+        },
+        {
+          "id": "G3-V5-0",
+          "voice_id": "V5",
+          "voice_version": 1,
+          "speaker_id": "C1",
+          "channel": "dialogue",
+          "start": 3,
+          "end": 8,
+          "char_start": 0,
+          "char_end": 45,
+          "text": "It might've been Owen. I still need to check."
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "scene_id": "S2",
+      "episode": 1,
+      "start": 29,
+      "duration": 13,
+      "asset_refs": [
+        {
+          "id": "C1",
+          "version": 1,
+          "state": "门左侧，右手伤不参与动作",
+          "variant_id": "workwear"
+        },
+        {
+          "id": "C2",
+          "version": 1,
+          "state": "门右侧"
+        },
+        {
+          "id": "L1",
+          "version": 1,
+          "state": "门内木闩仍卡住，出口和挂钩位置不变"
+        },
+        {
+          "id": "P1",
+          "version": 1,
+          "state": "先在锁孔，后入Nora口袋"
+        },
+        {
+          "id": "P2",
+          "version": 1,
+          "state": "木架上摊开，由Mara扶住"
+        }
+      ],
+      "setting": "两人在窄门外，木架在Mara身侧；不进入泵棚，不揭示门后其他空间。",
+      "sound": "小院风声、衣料轻响和同期动作声；不加音乐催情；声音轨严格按下列区间，只播放一次。",
+      "atmosphere": "写实柔和阴天散射光，旧砖与木纹有自然磨损，亮度跨段一致。",
+      "end_state": "登记簿缺一页；钥匙已在Nora口袋；门仍卡住。",
+      "shots": [
+        {
+          "id": "SH7",
+          "start": 0,
+          "end": 5,
+          "framing": "登记簿特写",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "木架承托簿子；Mara手指与书脊纸茬可见",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Mara指向缺页纸茬，不显示缺失内容或另一个人的撕页动作。",
+          "event_refs": [
+            {
+              "event_id": "E2",
+              "phases": [
+                "指示缺页"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "SH8",
+          "start": 5,
+          "end": 10,
+          "framing": "Nora腰部与门锁近景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "只让左手、锁孔、口袋构成清楚动作路径",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Nora左手把钥匙从锁孔取出，放入工装口袋。",
+          "event_refs": [
+            {
+              "event_id": "E2",
+              "phases": [
+                "收回钥匙"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "SH9",
+          "start": 10,
+          "end": 13,
+          "framing": "双人中景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "两人面向木架，簿子仍摊开，Mara扶着簿沿",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "保持刚完成的状态，两人短暂停顿；不新增交换眼神暗示或新线索。",
+          "event_refs": []
+        }
+      ],
+      "audio": [
+        {
+          "id": "G4-V6-0",
+          "voice_id": "V6",
+          "voice_version": 1,
+          "speaker_id": "C2",
+          "channel": "dialogue",
+          "start": 1,
+          "end": 4,
+          "char_start": 0,
+          "char_end": 28,
+          "text": "There's a page missing here."
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "scene_id": "S3",
+      "episode": 1,
+      "start": 42,
+      "duration": 8,
+      "asset_refs": [
+        {
+          "id": "C1",
+          "version": 1,
+          "state": "门左侧，右手伤不参与动作",
+          "variant_id": "workwear"
+        },
+        {
+          "id": "C2",
+          "version": 1,
+          "state": "门右侧"
+        },
+        {
+          "id": "L1",
+          "version": 1,
+          "state": "门内木闩仍卡住，出口和挂钩位置不变"
+        },
+        {
+          "id": "P1",
+          "version": 1,
+          "state": "Nora口袋"
+        },
+        {
+          "id": "P2",
+          "version": 1,
+          "state": "摊在木架上，Mara仍扶着"
+        }
+      ],
+      "setting": "两人在窄门外，木架在Mara身侧；不进入泵棚，不揭示门后其他空间。",
+      "sound": "小院风声、衣料轻响和同期动作声；不加音乐催情；声音轨严格按下列区间，只播放一次。",
+      "atmosphere": "写实柔和阴天散射光，旧砖与木纹有自然磨损，亮度跨段一致。",
+      "end_state": "只能明日查清；双方没有声称知道来访人或修好时间。",
+      "shots": [
+        {
+          "id": "SH10",
+          "start": 0,
+          "end": 8,
+          "framing": "Nora与Mara双人近景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "Nora左、Mara右，木架与簿沿保留在下方",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Nora说明核查时间，Mara听完；右手保持松弛，没有操作道具。",
+          "event_refs": [
+            {
+              "event_id": "E3",
+              "phases": [
+                "约定时间保持现状"
+              ]
+            }
+          ]
+        }
+      ],
+      "audio": [
+        {
+          "id": "G5-V7-0",
+          "voice_id": "V7",
+          "voice_version": 2,
+          "speaker_id": "C1",
+          "channel": "dialogue",
+          "start": 0,
+          "end": 4,
+          "char_start": 0,
+          "char_end": 32,
+          "text": "I can't find out until tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "scene_id": "S3",
+      "episode": 1,
+      "start": 50,
+      "duration": 12,
+      "asset_refs": [
+        {
+          "id": "C1",
+          "version": 1,
+          "state": "门左侧，右手伤不参与动作",
+          "variant_id": "workwear"
+        },
+        {
+          "id": "C2",
+          "version": 1,
+          "state": "门右侧"
+        },
+        {
+          "id": "L1",
+          "version": 1,
+          "state": "门内木闩仍卡住，出口和挂钩位置不变"
+        },
+        {
+          "id": "P1",
+          "version": 1,
+          "state": "Nora口袋"
+        },
+        {
+          "id": "P2",
+          "version": 1,
+          "state": "留在木架上摊开"
+        }
+      ],
+      "setting": "两人在窄门外，木架在Mara身侧；不进入泵棚，不揭示门后其他空间。",
+      "sound": "小院风声、衣料轻响和同期动作声；不加音乐催情；声音轨严格按下列区间，只播放一次。",
+      "atmosphere": "写实柔和阴天散射光，旧砖与木纹有自然磨损，亮度跨段一致。",
+      "end_state": "两人已离开门前；门仍被木闩卡住；登记簿留架，明日再查。",
+      "shots": [
+        {
+          "id": "SH11",
+          "start": 0,
+          "end": 6,
+          "framing": "Mara中近景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "Mara面向Nora，簿子和扶簿手在框内",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Mara回应并保持簿子不动，不增加任何保证。",
+          "event_refs": []
+        },
+        {
+          "id": "SH12",
+          "start": 6,
+          "end": 12,
+          "framing": "门外双人中景",
+          "camera": "门外平视，不越过人物视线轴",
+          "composition": "门、木架和退离路线同框，不切去未出现的人",
+          "movement": "固定机位，动作在画框内完成",
+          "action": "Mara松开簿沿，两人从门前离开；簿子留在木架上，门维持原状。",
+          "event_refs": [
+            {
+              "event_id": "E3",
+              "phases": [
+                "松开簿并离开"
+              ]
+            }
+          ]
+        }
+      ],
+      "audio": [
+        {
+          "id": "G6-V8-0",
+          "voice_id": "V8",
+          "voice_version": 1,
+          "speaker_id": "C2",
+          "channel": "dialogue",
+          "start": 0,
+          "end": 6,
+          "char_start": 0,
+          "char_end": 59,
+          "text": "Then we'll come back tomorrow. Leave the book here for now."
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "source_id": "SRC1:B1",
+      "target_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B2",
+      "target_ids": [
+        "S1"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B3",
+      "target_ids": [
+        "V1"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B4",
+      "target_ids": [
+        "V2"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B5",
+      "target_ids": [
+        "V3"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B6",
+      "target_ids": [
+        "E1"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B7",
+      "target_ids": [
+        "S2",
+        "E2"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B8",
+      "target_ids": [
+        "V4"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B9",
+      "target_ids": [
+        "V5"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B10",
+      "target_ids": [
+        "V6"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B11",
+      "target_ids": [
+        "E2"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B12",
+      "target_ids": [
+        "S3"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B13",
+      "target_ids": [
+        "V7"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B14",
+      "target_ids": [
+        "V8"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    },
+    {
+      "source_id": "SRC1:B15",
+      "target_ids": [
+        "E3"
+      ],
+      "reason": "保留事件/语义与渠道；母女责任改为主管委派，姓名、造型、场景本土化；不增加解决结果。"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "R1",
+      "category": "adaptation",
+      "scope": [
+        "PROJECT",
+        "C1",
+        "C2",
+        "C3",
+        "L1",
+        "P1",
+        "P2",
+        "S1",
+        "S2",
+        "S3",
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "status": "checked",
+      "reviewer": "当前助手单模型文字自审",
+      "evidence": "逐读原创15块：受雇委派替代母女照看，在V2呈现职责；钥匙原已持有，只有一把；右手不用；缺页内容不揭示；明日查而非修。见READING_REVIEW.md。",
+      "snapshots": {
+        "C1": "0530526dbd4d47bf04ed256fcaf3d1749390182b48d20f12b169f9b7cd331293",
+        "C2": "eafc29c4e9bb0e699ac6f36b24185dbc266c44a81e897103cc0b9cbf47605983",
+        "C3": "7a3971aa5fd7ad392d499a5336c73bfdba824c9f60ad2e32cf0f41aeb2e8da45",
+        "E1": "ce976fa8d661a368fcb655c9a6d44036695d5b7d13bcafcbf94b4c16e035a569",
+        "E2": "c1296dab6fa5cbd4d1f4faba1d1e8ec00af983a89a56acede648725369cbc19f",
+        "E3": "a6cc852f0922c05ba93ea25c913cab6e558b935de20d29fa08e48e481fdd5544",
+        "L1": "c0cf468a43abb05809545f80f2fdc854427c9bbeae3f8b48106fb5ee2ab5f415",
+        "P1": "9482c05d712e0f86d4574f53d078fc34779ff68c71b3aa3487d3c82fe27ae2b8",
+        "P2": "694f49167ba3cd5f4725d99e24298d6fb7a9163512a1a7b7e77b4dab66f105eb",
+        "PROJECT": "5c546af61a698527ff70bda49d6b5117840786a44e1dd35be185319c80847d95",
+        "S1": "3477c52a3b8ce6aff7ffd545edda81abbbdcec67695939b801ce30600719054b",
+        "S2": "512c7d005e92e1f4ecd5d5dce98c756266308f6a9004dc5609e3526d8b9fddc7",
+        "S3": "1b146a6d7edcaa5391522499f6f5c32407d2efe8f05b94a6548eb15f018ce939"
+      }
+    },
+    {
+      "id": "R2",
+      "category": "english",
+      "scope": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8"
+      ],
+      "status": "checked",
+      "reviewer": "当前助手单模型文字自审",
+      "evidence": "逐核V1—V8和源义：V4保留last，V5保留might与need to check，V7恢复until tomorrow；无新增旁白。单模型自审，非母语盲评。",
+      "snapshots": {
+        "C1": "0530526dbd4d47bf04ed256fcaf3d1749390182b48d20f12b169f9b7cd331293",
+        "C2": "eafc29c4e9bb0e699ac6f36b24185dbc266c44a81e897103cc0b9cbf47605983",
+        "C3": "7a3971aa5fd7ad392d499a5336c73bfdba824c9f60ad2e32cf0f41aeb2e8da45",
+        "L1": "c0cf468a43abb05809545f80f2fdc854427c9bbeae3f8b48106fb5ee2ab5f415",
+        "P1": "9482c05d712e0f86d4574f53d078fc34779ff68c71b3aa3487d3c82fe27ae2b8",
+        "P2": "694f49167ba3cd5f4725d99e24298d6fb7a9163512a1a7b7e77b4dab66f105eb",
+        "PROJECT": "5c546af61a698527ff70bda49d6b5117840786a44e1dd35be185319c80847d95",
+        "S1": "3477c52a3b8ce6aff7ffd545edda81abbbdcec67695939b801ce30600719054b",
+        "S2": "512c7d005e92e1f4ecd5d5dce98c756266308f6a9004dc5609e3526d8b9fddc7",
+        "S3": "1b146a6d7edcaa5391522499f6f5c32407d2efe8f05b94a6548eb15f018ce939",
+        "SRC1": "180e5d7d2cca0dfe75280a0468b585c5c283c2b4d0d46f114c04c7dab698f397",
+        "SRC1:B10": "9d0892b02ef197e956a749bef1f38bf5bcb793130938e3b1206d78f09e994681",
+        "SRC1:B13": "767957e05729ddc3df13a16f2cc99a79efb7ba1b0a8326568d92b1a0daad3c43",
+        "SRC1:B14": "573ccf1e1f491dc733986f0dc5c63bb4d64b0a96714ad4e32b07df6cef34c65a",
+        "SRC1:B3": "749c6e33c61b49b977c172b4480fcf657d97f90ae155e8bc60d26e863cb18986",
+        "SRC1:B4": "f9f4196b18f94aaaf899cc5012dc880e430d92d52945b46126e916fa46777f11",
+        "SRC1:B5": "61e30e7479a2fb1d37ff6e7afcf01ddac19fcaa087cae11f8b88c3adf00315cb",
+        "SRC1:B8": "61d800004fd0d4a6f26851fce0d2c2fda470d6d482a43e08f38024421f9c5367",
+        "SRC1:B9": "8038eabdc497d5d9dc0dc568a15d5709b91e53817547a0cf34767c6c521fc7e4",
+        "V1": "04ac709548d91b60f52a163cbf014d1f2abe6a2fe9f7290ef23dd53ad23c4b38",
+        "V2": "e9d4202c54f8fda99c182f91919323fc4e45c97b8423fa3d99b6f2e3e6013190",
+        "V3": "efe7ef6d2144d1197f495a1c1fb0637cfd70bc1143410db7d0ca4ade66829897",
+        "V4": "c09b5fdce25d1e28afdcb235c7d299eabcc531cbfae0d4502677bc1e547bafb7",
+        "V5": "d36ab909ba1c6f8c0209239ab5ff14661081a98557934b07ee18265864e1e6e6",
+        "V6": "cb985f74e6c1dc5eded503ac3711cfbb8d7b40c3ac9cec614a6bace06502a429",
+        "V7": "38fd3372c699af4109d89ae76d2c0f4b437aa0ac64afd681543a04feba741c29",
+        "V8": "3bcf2be799eea55525a79ad4320cb65a5dd4692a346daa51e449a580e6618a92"
+      }
+    },
+    {
+      "id": "R3",
+      "category": "feasibility",
+      "scope": [
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6"
+      ],
+      "status": "checked",
+      "reviewer": "当前助手单模型文字自审",
+      "evidence": "G1—G6合计62秒；语音规划非测量。V2跨段字符连续；V3跨SH4/5但仍画外对白。开锁、取簿、收钥匙各有独立时间。",
+      "snapshots": {
+        "C1": "0530526dbd4d47bf04ed256fcaf3d1749390182b48d20f12b169f9b7cd331293",
+        "C2": "eafc29c4e9bb0e699ac6f36b24185dbc266c44a81e897103cc0b9cbf47605983",
+        "C3": "7a3971aa5fd7ad392d499a5336c73bfdba824c9f60ad2e32cf0f41aeb2e8da45",
+        "E1": "ce976fa8d661a368fcb655c9a6d44036695d5b7d13bcafcbf94b4c16e035a569",
+        "E2": "c1296dab6fa5cbd4d1f4faba1d1e8ec00af983a89a56acede648725369cbc19f",
+        "E3": "a6cc852f0922c05ba93ea25c913cab6e558b935de20d29fa08e48e481fdd5544",
+        "G1": "09fa61144e69f849fe6b20e47c6e2eef9db769f28c3d7b3900ff02c5c7180078",
+        "G2": "4b903d699884414fd88890cc2b9d5093c8dee42a7321ac120734a8cc040473d7",
+        "G3": "01628c9e058bc99b88e7645b3c9c18001c92a0f0494bec75c0ba9b7c21540a67",
+        "G4": "f91fb134c19bb9b1a9ea6903a043f678de73cff7b19dbb6209f5cd016fc41685",
+        "G5": "9daf3f7898dcea5d008a456f6c32012ec492cc8aa9d70409ad2f4f22c87051cb",
+        "G6": "6a65545fafcaebefed64f2ab59d4f19a6c1af5b7e99388b6174cc1b2e29ab160",
+        "L1": "c0cf468a43abb05809545f80f2fdc854427c9bbeae3f8b48106fb5ee2ab5f415",
+        "P1": "9482c05d712e0f86d4574f53d078fc34779ff68c71b3aa3487d3c82fe27ae2b8",
+        "P2": "694f49167ba3cd5f4725d99e24298d6fb7a9163512a1a7b7e77b4dab66f105eb",
+        "PROJECT": "5c546af61a698527ff70bda49d6b5117840786a44e1dd35be185319c80847d95",
+        "S1": "3477c52a3b8ce6aff7ffd545edda81abbbdcec67695939b801ce30600719054b",
+        "S2": "512c7d005e92e1f4ecd5d5dce98c756266308f6a9004dc5609e3526d8b9fddc7",
+        "S3": "1b146a6d7edcaa5391522499f6f5c32407d2efe8f05b94a6548eb15f018ce939",
+        "SRC1": "180e5d7d2cca0dfe75280a0468b585c5c283c2b4d0d46f114c04c7dab698f397",
+        "SRC1:B10": "9d0892b02ef197e956a749bef1f38bf5bcb793130938e3b1206d78f09e994681",
+        "SRC1:B13": "767957e05729ddc3df13a16f2cc99a79efb7ba1b0a8326568d92b1a0daad3c43",
+        "SRC1:B14": "573ccf1e1f491dc733986f0dc5c63bb4d64b0a96714ad4e32b07df6cef34c65a",
+        "SRC1:B3": "749c6e33c61b49b977c172b4480fcf657d97f90ae155e8bc60d26e863cb18986",
+        "SRC1:B4": "f9f4196b18f94aaaf899cc5012dc880e430d92d52945b46126e916fa46777f11",
+        "SRC1:B5": "61e30e7479a2fb1d37ff6e7afcf01ddac19fcaa087cae11f8b88c3adf00315cb",
+        "SRC1:B8": "61d800004fd0d4a6f26851fce0d2c2fda470d6d482a43e08f38024421f9c5367",
+        "SRC1:B9": "8038eabdc497d5d9dc0dc568a15d5709b91e53817547a0cf34767c6c521fc7e4",
+        "V1": "04ac709548d91b60f52a163cbf014d1f2abe6a2fe9f7290ef23dd53ad23c4b38",
+        "V2": "e9d4202c54f8fda99c182f91919323fc4e45c97b8423fa3d99b6f2e3e6013190",
+        "V3": "efe7ef6d2144d1197f495a1c1fb0637cfd70bc1143410db7d0ca4ade66829897",
+        "V4": "c09b5fdce25d1e28afdcb235c7d299eabcc531cbfae0d4502677bc1e547bafb7",
+        "V5": "d36ab909ba1c6f8c0209239ab5ff14661081a98557934b07ee18265864e1e6e6",
+        "V6": "cb985f74e6c1dc5eded503ac3711cfbb8d7b40c3ac9cec614a6bace06502a429",
+        "V7": "38fd3372c699af4109d89ae76d2c0f4b437aa0ac64afd681543a04feba741c29",
+        "V8": "3bcf2be799eea55525a79ad4320cb65a5dd4692a346daa51e449a580e6618a92"
+      }
+    },
+    {
+      "id": "R4",
+      "category": "visual_storytelling",
+      "scope": [
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6"
+      ],
+      "status": "checked",
+      "reviewer": "当前助手单模型文字自审",
+      "evidence": "12片段逐读：钥匙、木闩、纸茬各有可见画面；SH2/3为同一长镜接续，非重复动作；无新增线索。未生成视频。",
+      "snapshots": {
+        "C1": "0530526dbd4d47bf04ed256fcaf3d1749390182b48d20f12b169f9b7cd331293",
+        "C2": "eafc29c4e9bb0e699ac6f36b24185dbc266c44a81e897103cc0b9cbf47605983",
+        "C3": "7a3971aa5fd7ad392d499a5336c73bfdba824c9f60ad2e32cf0f41aeb2e8da45",
+        "E1": "ce976fa8d661a368fcb655c9a6d44036695d5b7d13bcafcbf94b4c16e035a569",
+        "E2": "c1296dab6fa5cbd4d1f4faba1d1e8ec00af983a89a56acede648725369cbc19f",
+        "E3": "a6cc852f0922c05ba93ea25c913cab6e558b935de20d29fa08e48e481fdd5544",
+        "G1": "09fa61144e69f849fe6b20e47c6e2eef9db769f28c3d7b3900ff02c5c7180078",
+        "G2": "4b903d699884414fd88890cc2b9d5093c8dee42a7321ac120734a8cc040473d7",
+        "G3": "01628c9e058bc99b88e7645b3c9c18001c92a0f0494bec75c0ba9b7c21540a67",
+        "G4": "f91fb134c19bb9b1a9ea6903a043f678de73cff7b19dbb6209f5cd016fc41685",
+        "G5": "9daf3f7898dcea5d008a456f6c32012ec492cc8aa9d70409ad2f4f22c87051cb",
+        "G6": "6a65545fafcaebefed64f2ab59d4f19a6c1af5b7e99388b6174cc1b2e29ab160",
+        "L1": "c0cf468a43abb05809545f80f2fdc854427c9bbeae3f8b48106fb5ee2ab5f415",
+        "P1": "9482c05d712e0f86d4574f53d078fc34779ff68c71b3aa3487d3c82fe27ae2b8",
+        "P2": "694f49167ba3cd5f4725d99e24298d6fb7a9163512a1a7b7e77b4dab66f105eb",
+        "PROJECT": "5c546af61a698527ff70bda49d6b5117840786a44e1dd35be185319c80847d95",
+        "S1": "3477c52a3b8ce6aff7ffd545edda81abbbdcec67695939b801ce30600719054b",
+        "S2": "512c7d005e92e1f4ecd5d5dce98c756266308f6a9004dc5609e3526d8b9fddc7",
+        "S3": "1b146a6d7edcaa5391522499f6f5c32407d2efe8f05b94a6548eb15f018ce939",
+        "SRC1": "180e5d7d2cca0dfe75280a0468b585c5c283c2b4d0d46f114c04c7dab698f397",
+        "SRC1:B10": "9d0892b02ef197e956a749bef1f38bf5bcb793130938e3b1206d78f09e994681",
+        "SRC1:B13": "767957e05729ddc3df13a16f2cc99a79efb7ba1b0a8326568d92b1a0daad3c43",
+        "SRC1:B14": "573ccf1e1f491dc733986f0dc5c63bb4d64b0a96714ad4e32b07df6cef34c65a",
+        "SRC1:B3": "749c6e33c61b49b977c172b4480fcf657d97f90ae155e8bc60d26e863cb18986",
+        "SRC1:B4": "f9f4196b18f94aaaf899cc5012dc880e430d92d52945b46126e916fa46777f11",
+        "SRC1:B5": "61e30e7479a2fb1d37ff6e7afcf01ddac19fcaa087cae11f8b88c3adf00315cb",
+        "SRC1:B8": "61d800004fd0d4a6f26851fce0d2c2fda470d6d482a43e08f38024421f9c5367",
+        "SRC1:B9": "8038eabdc497d5d9dc0dc568a15d5709b91e53817547a0cf34767c6c521fc7e4",
+        "V1": "04ac709548d91b60f52a163cbf014d1f2abe6a2fe9f7290ef23dd53ad23c4b38",
+        "V2": "e9d4202c54f8fda99c182f91919323fc4e45c97b8423fa3d99b6f2e3e6013190",
+        "V3": "efe7ef6d2144d1197f495a1c1fb0637cfd70bc1143410db7d0ca4ade66829897",
+        "V4": "c09b5fdce25d1e28afdcb235c7d299eabcc531cbfae0d4502677bc1e547bafb7",
+        "V5": "d36ab909ba1c6f8c0209239ab5ff14661081a98557934b07ee18265864e1e6e6",
+        "V6": "cb985f74e6c1dc5eded503ac3711cfbb8d7b40c3ac9cec614a6bace06502a429",
+        "V7": "38fd3372c699af4109d89ae76d2c0f4b437aa0ac64afd681543a04feba741c29",
+        "V8": "3bcf2be799eea55525a79ad4320cb65a5dd4692a346daa51e449a580e6618a92"
+      }
+    }
+  ],
+  "issues": [
+    {
+      "id": "I1",
+      "status": "resolved",
+      "detail": "初稿V7把明日才能查清改成明日肯定修好，越过信息与承诺边界。",
+      "affected_ids": [
+        "V7",
+        "G5"
+      ],
+      "attempts": 1,
+      "allowed_repair": "只修复V7意思和其声音片段，不改事件结局。",
+      "resolution": "V7改为I can't find out until tomorrow.，版本2，更新G5音轨；重新查语义与声音覆盖。"
+    }
+  ]
+}

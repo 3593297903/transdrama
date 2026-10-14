@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "2026-10-10T05:47:09.169626+00:00",
+  "python": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "command": "python -m unittest discover -s tests -v",
+  "returncode": 0,
+  "test_count": 59,
+  "basic_skill_layout": {
+    "frontmatter_delimiters": true,
+    "name": true,
+    "description": true,
+    "references_exist": true,
+    "no_unfinished_marker": true
+  },
+  "note": "Basic layout checks are not the unavailable PyYAML-based official validator; no semantic or media certification."
+}
