@@ -1,0 +1,6 @@
+interface:
+  display_name: "短剧话音中译英"
+  short_description: "只翻译中文对白、旁白与内心独白，保留人物剧情、原镜头、分段和全部时码"
+  default_prompt: "使用 $short-drama-voice-translate 直接处理我本次已上传或粘贴的原稿，将其中中文对白、旁白、内心独白等话音译成自然美式英语，其他内容、镜头和时长保持原样。"
+policy:
+  allow_implicit_invocation: true
