@@ -1,4 +1,6 @@
 interface:
   display_name: "短剧微改与英语本土化"
   short_description: "保持主线，联合调整关系、形象与场景，精修英语对白并交付完整视频提示词"
-  default_prompt: "使用 $short-drama-adapt-localize 处理我提供的作品，先确认目标地区、年代和范围，再按完整工作流改编并交付视频提示词。"
+  default_prompt: "使用 $short-drama-adapt-localize 处理我提供的完整原稿，未另指定时按美国/en-US、保留原稿年代，执行发布验收型B流程并交付完整视频提示词与状态。"
+policy:
+  allow_implicit_invocation: true

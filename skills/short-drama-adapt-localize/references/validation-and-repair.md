@@ -1,17 +1,19 @@
-# 验收与有界返修
+# 审读、修复、发布前验收与恢复
 
-程序检查与语义审读分开。结构脚本只能核对字段、引用、数字、文本和版本；不能判定锁定稿本身是否忠实、地道或可拍。SOURCE_*代表来源覆盖问题，VOICE_*代表制作层相对锁定文字的问题，不是版权/母语评分。
+结构程序检查字段/类型、引用、数字、文本、版本与记录依赖；无法证明原稿意思正确、英语自然或可拍。四项独立报告：structure_coverage、ai_story_language、target_language、media。当前成功文本状态仍为ready_for_text_delivery，不代表真人终审/成片/发布完成。
 
-审读至少四类：adaptation（权限/主线/关系/物理/知识）、english（语义/口语/上下轮）、feasibility（时长规划/动作/声音串并行）、visual_storytelling（镜头能否看清关键信息且不加戏）。必须实际阅读，再用review_record记录审查者、证据、覆盖ID和依赖快照。脚本仅判断记录是否当前，不能证明审查真的发生。
+schema 2 必需实际审读类别：adaptation、english_fidelity、english_viewing、feasibility、visual_storytelling、full_read。review_record在真实阅读之后保存work_id/scope/evidence/kind/result/snapshots，scope可以分批覆盖，具体审读须读完整相应场景。测试记录kind=test仅限test_fixture，不转成生产/真人证明。缺字段、未执行、failed、needs_review、stale、checked区分；异常不能回退空错误通过。
 
-每个问题记录id、detail、证据定位、affected_ids、cause、allowed_repair、attempts、status、resolution和checked_snapshot。具体字段可附加；程序强检status/resolution，其他是审读责任。draft/needs_review/failed/checked/stale用于工作状态；只有用户真实确认才可另存user-approved及确认来源，工具不自动签发。
+问题有场景/话音/片段、分类与证据、严重性置信度、允许层、attempts、root_issue_id、status与resolution。confirmed重大问题需要明确高置信证据；偏好/语境疑问不冒充重大确定错误，重大未决不被总分抵消。修复最多两次，关联ID与同定位预算累计；耗尽是待核。resolved/writer_decided/user_confirmed须当前整场recheck；writer_decided不能关掉确认重大错误，user_confirmed须真实确认来源，不等于语言认证。
 
-修复路由：关系/事实→3/4；含义与口语→5；动作排期→6；镜头显示→7。先修原因，再更新关联台词/资产/状态与版本，重核依赖闭包。不要为过期审查改成checked而跳过复核。不受影响的场次不必重写。revise_project比较内容哈希，即便忘记加版本也会暴露过期记录；版本仍须主动递增。
+上游改动先保存新版本，seal正确父版本，用revise做身份/当前头/依赖守卫。coverage目标、理由、授权改变使改编审读失效；英语绑定整场上下轮、事件、人物/叙述身份与必要前情。日志、progress、全局revision不进入语义快照，不能因为修订号增长无差别废掉无关检查。规则、来源、真实内容变化分别可追溯。
 
-每问题最多两次不同的最小修复；仍无解则待核并说明影响。非受影响部分可以继续，不能无限润色。未测音频=not_measured，未生成视频=not_generated；文本通过≠配音时长/4K/角色一致性通过。
+双重对照：原稿/授权→新事实；锁稿→成品。全范围终读可分批，但不能用摘要、首尾集或10%代替。原稿整部已提供时先全剧定稿后分批制作。角色、称呼、承诺、伤势/持物/证据、时间、知情和叙述身份跨集核对。
 
-双重对照：原稿→新稿查改编权限和遗漏；锁稿→成品查镜头/声音是否擅改。源和新稿句数/镜头数可以不同，以语义覆盖与角色渠道为准。默认文本范围全读完才全局改编；source.reading_status由真实阅读填写，工具提取后仍unread。
+无人审仍可完整交付AI文字包，明确未做真实目标语终审/待终审。正式发布建议具有美国英语影视经验的真实审者对实际发布全范围终读。真人记录仅真实发生后登记reviewer_source/qualification/date/scope/作品版本/结论与证据快照；程序不能证明审者能力。人审改词回核批准意思；不自动外发/采购。
 
-确定结构错误停止导出。存在语义/来源待核时仅能用--allow-review-draft显式生成待核版，随文件附validation.json；不挂“全部通过”。音频/视频未测不阻止诚实的文字交付。
+媒体验收需真实实听实看并记录实际文件哈希与测过的dimensions；不把文字估时当音频实测，不把提示分辨率当4K成片。未测口音、重音、声线、字幕、口型、连续性逐项未测。无媒体记录时not_performed；JSON记录只是有来源的验收声明。
 
-续作：保存每批project.json新版本、当前范围/剩余范围/下场ID/最新状态/开放问题；复开先读状态和相关完整来源。不要靠聊天摘要补全部事实。最终检查跨批称谓、持物、服装、伤势、知情、集场覆盖。数据快照不保存隐藏推理，只保存事实和简短修改理由。
+导出先check：结构错误拒绝，待核只用--allow-review-draft明示审稿版。临时产物全部回读后发布目录，最后package.json作为完整包标志，包含作品/内容版本与产物哈希。失败留诊断，无有效完整标志；不覆盖旧有效包，不递归清理目录。--resume只验证复用相同内容/版本完整包，或保留并重试同作品同指纹失败/中断包；损坏完整包不静默重建，改用新目录。
+
+恢复：读取head.json指向的当前状态、完整来源块、未决、最后实际完成场次和版本，用check --recovery导航，再打开相应完整上下轮。handoff只记录作品/内容指纹、范围、上游、已完成/未决/下一步；进度/摘要不能制造通过。每剧独立work目录与当前头，多部清单由助手逐部执行；没有后台队列、定时生产或跨剧共用人物记忆。

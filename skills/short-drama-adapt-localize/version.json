@@ -1,0 +1,9 @@
+{
+  "package_version": "2.0.0",
+  "schema_version": 2,
+  "workflow_version": "B-release-2.0",
+  "rules_version": "2026-10-14.1",
+  "project_global_allowed_differences": [],
+  "output_policy": "current authorized task workspace, never skill installation directory",
+  "trigger_verification": "static package checks; a new Codex session must confirm discovery"
+}

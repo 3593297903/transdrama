@@ -57,7 +57,7 @@ def nonempty(value):
 
 def production_counts(doc):
     shots = [shot for seg in doc["segments"] for shot in seg["shots"]]
-    return {"source_blocks": sum(len(x["blocks"]) for x in doc["sources"]),
+    result = {"source_blocks": sum(len(x["blocks"]) for x in doc["sources"]),
             "read_blocks_declared": sum(b.get("read") is True for s in doc["sources"] for b in s["blocks"]),
             "episodes": doc["project"]["episodes"], "scenes": len(doc["scenes"]),
             "segments": len(doc["segments"]), "shot_fragments": len(shots),
@@ -67,6 +67,24 @@ def production_counts(doc):
             "planned_total_seconds": str(sum((number(s["duration"]) for s in doc["segments"]), Decimal(0))),
             "max_segment_seconds": str(max((number(s["duration"]) for s in doc["segments"]), default=Decimal(0))),
             "max_shot_fragment_seconds": str(max((number(s["end"])-number(s["start"]) for s in shots), default=Decimal(0)))}
+    result["per_episode"] = []
+    for ep in doc["project"]["episodes"]:
+        scene_ids = {s["id"] for s in doc["scenes"] if s["episode"] == ep}
+        segments = [s for s in doc["segments"] if s["episode"] == ep]
+        voices = [v for v in doc["voices"] if v["scene_id"] in scene_ids]
+        fragments = [s for seg in segments for s in seg["shots"]]
+        result["per_episode"].append({"episode": ep, "scenes": len(scene_ids),
+            "events": sum(e["scene_id"] in scene_ids for e in doc["events"]),
+            "voices": len(voices), "narration": sum(v["channel"] == "narration" for v in voices),
+            "inner": sum(v["channel"] == "inner" for v in voices), "segments": len(segments),
+            "shot_fragments": len(fragments), "continuous_shots": len({s.get("continuous_take_id") or s["id"] for s in fragments}),
+            "audio_fragments": sum(len(s["audio"]) for s in segments),
+            "planned_seconds": str(sum((number(s["duration"]) for s in segments), Decimal(0))),
+            "locked_voice_characters": sum(len(v["text"]) for v in voices),
+            "production_description_characters": sum(len(s[f]) for seg in segments for s in seg["shots"]
+                                                      for f in ("framing", "camera", "composition", "movement", "action"))})
+    result["diagnostic_note"] = "Counts describe planned text; no fixed length/retention quota or cross-language shrinkage ratio."
+    return result
 
 
 def index_records(doc):
@@ -82,6 +100,9 @@ def index_records(doc):
             if group == "sources":
                 for block in item["blocks"]:
                     add(block)
+    if doc.get("schema_version") == 2:
+        from release_contract import augment_index
+        augment_index(doc, index)
     return index
 
 
@@ -108,6 +129,9 @@ def dependencies(doc):
         graph[segment["id"]].update(x["voice_id"] for x in segment["audio"])
         for shot in segment["shots"]:
             graph[segment["id"]].update(x["event_id"] for x in shot["event_refs"])
+    if doc.get("schema_version") == 2:
+        from release_contract import augment_graph
+        augment_graph(doc, graph)
     return index, graph
 
 
@@ -135,14 +159,24 @@ def snapshots(doc, roots):
     return {key: digest(index[key]) for key in sorted(closure(graph, roots))}
 
 
-def review_record(doc, review_id, category, scope, reviewer, evidence):
+def review_record(doc, review_id, category, scope, reviewer, evidence, test_record=False):
     """Record a review AFTER actual reading; this function performs no semantic review."""
+    if doc.get("schema_version") == 2:
+        from release_contract import make_review
+        return make_review(doc, review_id, category, scope, reviewer, evidence, test_record)
     return {"id": review_id, "category": category, "scope": scope,
             "status": "checked", "reviewer": reviewer, "evidence": evidence,
             "snapshots": snapshots(doc, scope)}
 
 
-def invalidate_changes(before, after):
+def invalidate_changes(before, after, check_revision=True):
+    if before["project"]["id"] != after["project"]["id"]:
+        raise ContractError("WORK_MISMATCH: cannot transfer revisions across works, including legacy states")
+    if after["project"]["revision"] < before["project"]["revision"]:
+        raise ContractError("REVISION_ROLLBACK: cannot move a legacy or current revision backwards")
+    if after.get("schema_version") == 2 and check_revision:
+        from release_contract import guard_revision
+        guard_revision(before, after)
     old, _ = dependencies(before)
     new, graph = dependencies(after)
     changed = {key for key in old.keys() | new.keys()
@@ -156,8 +190,13 @@ def invalidate_changes(before, after):
     stale = []
     for review in after.get("reviews", []):
         if set(review.get("snapshots", {})) & affected:
-            review["status"] = "stale"
-            stale.append(review["id"])
+            roots = review.get("scope", [])
+            if after.get("schema_version") == 2:
+                from release_contract import review_roots
+                roots = review_roots(after, review.get("category"), roots)
+            if review.get("snapshots") != snapshots(after, roots):
+                review["status"] = "stale"
+                stale.append(review["id"])
     return {"changed_ids": sorted(changed), "affected_ids": sorted(affected),
             "stale_review_ids": stale}
 
@@ -174,9 +213,12 @@ def validate(doc):
                 "overall_status": "failed" if errors else ("review_draft" if pending else "ready_for_text_delivery"),
                 "audio_status": "not_measured", "video_status": "not_generated",
                 "source_reading": "reader_declaration_not_independent_proof",
-                "errors": errors, "review_required": pending}
-    if not isinstance(doc, dict) or doc.get("schema_version") != 1:
-        error("SCHEMA", "$", None, "schema_version=1 object")
+                "errors": errors, "review_required": pending,
+                "acceptance": {"structure_coverage":"failed" if errors else "passed",
+                               "ai_story_language":"not_evaluated" if errors else "needs_review" if pending else "recorded_reviews_current",
+                               "target_language":"not_evaluated", "media":"not_evaluated"}}
+    if not isinstance(doc, dict) or type(doc.get("schema_version")) is not int or doc.get("schema_version") not in (1, 2):
+        error("SCHEMA", "$", None, "supported schema_version=1 or 2 object")
         return result()
     if not isinstance(doc.get("project"), dict):
         error("SHAPE", "project", None, "object")
@@ -190,11 +232,21 @@ def validate(doc):
     # Malformed nested input must produce a failed report, not bypass validation.
     try:
         _validate(doc, error, need)
+        if doc["schema_version"] == 2:
+            from release_contract import validate_release
+            validate_release(doc, error, need)
     except (KeyError, TypeError, ValueError, AttributeError, IndexError, RecursionError) as exc:
         error("MALFORMED", "$", str(exc), "data-contract.md structure and valid references")
     report = result()
     if not errors:
         report["counts"] = production_counts(doc)
+        if doc["schema_version"] == 2:
+            from release_contract import acceptance_summary
+            report["acceptance"] = {"structure_coverage": report["structural_status"],
+                "ai_story_language": "needs_review" if pending else (
+                    "test_records_current" if any(r.get("kind") == "test" for r in doc["reviews"]) else "same_source_ai_records_current"),
+                **acceptance_summary(doc)}
+    report["schema_version"] = doc["schema_version"]
     return report
 
 
@@ -233,10 +285,12 @@ def _validate(doc, error, need):
                 error("SOURCE_BLOCK", block["id"], block, "nonempty text and locator")
             if block.get("read") is not True:
                 need("BLOCK_UNREAD", block["id"], block.get("read"), True)
-            if block.get("kind") not in ("heading", "action", "dialogue", "offscreen", "narration", "other"):
+            if block.get("kind") not in ("heading", "action", "dialogue", "offscreen", "narration", "inner", "other"):
                 error("SOURCE_KIND", block["id"], block.get("kind"), "supported kind")
     entities = {x["id"]: x for x in doc["entities"]}
     for item in entities.values():
+        if "relationship" in item and not isinstance(item["relationship"], str):
+            error("FIELD_TYPE", item["id"] + ".relationship", item["relationship"], "string")
         for field in ("name", "description"):
             if not nonempty(item.get(field)):
                 error("ASSET_DESCRIPTION", item["id"], item.get(field), field)
@@ -250,6 +304,9 @@ def _validate(doc, error, need):
         variants = item.get("variants", [])
         if len({x["id"] for x in variants}) != len(variants):
             error("VARIANT_DUPLICATE", item["id"], variants, "unique variant IDs")
+        for variant in variants:
+            if not nonempty(variant.get("description")):
+                error("VARIANT_DESCRIPTION", item["id"] + "." + variant["id"], variant.get("description"), "nonempty string")
     scenes = {x["id"]: x for x in doc["scenes"]}
     expected = project["expected_scene_ids"]
     if len(expected) != len(set(expected)) or set(expected) != set(scenes):
@@ -303,10 +360,10 @@ def _validate(doc, error, need):
         if type(voice.get("version")) is not int or voice["version"] < 1:
             error("VOICE_VERSION", vid, voice.get("version"), "positive integer")
         channel = voice["channel"]
-        if channel not in ("dialogue", "offscreen", "narration"):
+        if channel not in ("dialogue", "offscreen", "narration", "inner"):
             error("VOICE_CHANNEL", vid, channel, "supported channel")
         speaker = voice.get("speaker_id")
-        if channel == "narration":
+        if channel in ("narration", "inner"):
             if speaker is not None:
                 error("NARRATOR", vid, speaker, None)
         elif speaker not in entities or entities[speaker]["kind"] != "character":
@@ -332,7 +389,7 @@ def _validate(doc, error, need):
         for target in item["target_ids"]:
             if target not in scenes and target not in voices and target not in events:
                 error("COVERAGE_TARGET", bid, target, "scene/event/voice ID")
-        if bid in blocks and blocks[bid]["kind"] in ("dialogue", "offscreen", "narration"):
+        if bid in blocks and blocks[bid]["kind"] in ("dialogue", "offscreen", "narration", "inner"):
             mapped = [voices[x] for x in item["target_ids"] if x in voices]
             if not mapped or any(v["channel"] != blocks[bid]["kind"] or bid not in v["source_ids"] for v in mapped):
                 error("SOURCE_VOICE_LOST", bid, item["target_ids"], "traceable voice with same channel")
@@ -357,6 +414,8 @@ def _segments(doc, scenes, entities, events, voices, error, need):
         previous_scene = rank
         rendered_scenes.add(scid)
         start, duration = number(segment["start"]), number(segment["duration"])
+        if segment.get("source_timecode") is not None and not nonempty(segment["source_timecode"]):
+            error("SOURCE_TIMECODE", sid, segment["source_timecode"], "nonempty string or null")
         if not 0 < duration <= 15:
             error("SEGMENT_DURATION", sid, str(duration), "0 < seconds <= 15")
         if start != episode_ends[ep]:
@@ -381,6 +440,8 @@ def _segments(doc, scenes, entities, events, voices, error, need):
             error("SHOTS_EMPTY", sid, [], "at least one shot")
         for shot in segment["shots"]:
             shid = shot["id"]
+            if not nonempty(shid):
+                error("ID_TYPE", sid + ".shots", shid, "nonempty string ID")
             if shid in nested_ids:
                 error("NESTED_ID", sid, shid, "unique shot/audio ID")
             nested_ids.add(shid)
@@ -412,6 +473,8 @@ def _segments(doc, scenes, entities, events, voices, error, need):
             error("SHOT_COVERAGE", sid, str(end), str(duration))
         for clip in segment["audio"]:
             cid, vid = clip["id"], clip["voice_id"]
+            if not nonempty(cid):
+                error("ID_TYPE", sid + ".audio", cid, "nonempty string ID")
             if cid in nested_ids:
                 error("NESTED_ID", sid, cid, "unique shot/audio ID")
             nested_ids.add(cid)
@@ -451,6 +514,21 @@ def _segments(doc, scenes, entities, events, voices, error, need):
             cursor, previous = part["char_end"], part
         if cursor != len(voices[vid]["text"]):
             error("VOICE_INCOMPLETE", vid, cursor, len(voices[vid]["text"]))
+        # Interior pauses consume their containing clip. Boundary pauses consume
+        # the explicitly checked inter-clip gap; neither can hide outside time.
+        pauses = voices[vid].get("pauses", [])
+        for part in parts:
+            interior = sum((number(p["seconds"]) for p in pauses
+                            if part["char_start"] < p["after_char"] < part["char_end"]), Decimal(0))
+            if interior >= part["global_end"] - part["global_start"]:
+                error("PAUSE_BUDGET", part["id"], str(interior), "pause time less than clip duration, leaving time for speech")
+        if voices[vid].get("estimated_speech_seconds") is not None:
+            estimate = number(voices[vid]["estimated_speech_seconds"])
+            available = sum((p["global_end"] - p["global_start"] for p in parts), Decimal(0))
+            interior = sum((number(p["seconds"]) for p in pauses
+                            if any(x["char_start"] < p["after_char"] < x["char_end"] for x in parts)), Decimal(0))
+            if estimate <= 0 or estimate + interior > available:
+                error("SPEECH_PLAN", vid, str(estimate + interior), str(available))
     ordered = sorted(timeline, key=lambda x: (x["episode"], x["global_start"]))
     first = list(dict.fromkeys(x["voice_id"] for x in ordered))
     if first != list(voices):
@@ -471,6 +549,9 @@ def _segments(doc, scenes, entities, events, voices, error, need):
 
 
 def _reviews(doc, error, need):
+    if doc.get("schema_version") == 2:
+        from release_contract import validate_reviews
+        return validate_reviews(doc, error, need)
     expected = {
         "adaptation": {"PROJECT", *[x["id"] for group in ("entities", "scenes", "events") for x in doc[group]]},
         "english": {x["id"] for x in doc["voices"]},
