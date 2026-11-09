@@ -1,0 +1,6 @@
+interface:
+  display_name: "叙事实体安全改名"
+  short_description: "安全替换剧本和视频提示词中的人物称谓、完整姓名及专名地点"
+  default_prompt: "使用 $narrative-entity-renamer 安全替换这份剧本中的人物称谓和专名地点，并检查旧名称残留。"
+policy:
+  allow_implicit_invocation: true
